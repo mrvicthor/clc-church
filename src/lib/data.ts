@@ -1,3 +1,5 @@
+import { BookOpen, Heart, Mail, MapPin, Phone, Users } from "lucide-react";
+
 export const events = [
   {
     id: 1,
@@ -79,5 +81,38 @@ export const recentMessages = [
     duration: "29:45",
     series: "Christmas Special",
     audioUrl: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
+  },
+];
+
+export const aboutItems = [
+  {
+    icon: Users,
+    title: "Community",
+    desc: "Building lasting relationships",
+  },
+  {
+    icon: BookOpen,
+    title: "Bible Teaching",
+    desc: "Grounded in God's Word",
+  },
+  {
+    icon: Heart,
+    title: "Service",
+    desc: "Serving others with love",
+  },
+  {
+    icon: Users,
+    title: "Worship",
+    desc: "Praising God together",
+  },
+];
+
+export const contatctItems = [
+  { icon: Phone, title: "Phone", content: "(555) 123-4567" },
+  { icon: Mail, title: "Email", content: "info@gracechurch.com" },
+  {
+    icon: MapPin,
+    title: "Address",
+    content: "123 Faith Street\nHope City, HC 12345",
   },
 ];

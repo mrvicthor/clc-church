@@ -7,9 +7,10 @@ import { MediaPlayer } from "./media-player";
 
 type MessagesProps = {
   isVisible: boolean;
+  scrollY: number;
 };
 
-const Messages = ({ isVisible }: MessagesProps) => {
+const Messages = ({ isVisible, scrollY }: MessagesProps) => {
   const [selectedMessage, setSelectedMessage] = useState(recentMessages[0]);
   const [playerType, setPlayerType] = useState<"audio" | "video">("audio");
   return (

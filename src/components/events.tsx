@@ -1,5 +1,4 @@
 import { events } from "@/lib/data";
-import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -9,44 +8,13 @@ import {
 } from "./ui/card";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
-import Messages from "./messages";
-import Pastor from "./pastor";
 
-const Events = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isVisible, setIsVisible] = useState({
-    hero: false,
-    events: false,
-    messages: false,
-    pastor: false,
-    about: false,
-    contact: false,
-  });
+type EventsProps = {
+  isVisible: boolean;
+  scrollY: number;
+};
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            setIsVisible((prev) => ({ ...prev, [sectionId]: true }));
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const sections = document.querySelectorAll("section[id]");
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
+const Events = ({ isVisible, scrollY }: EventsProps) => {
   return (
     <>
       <section id="events" className="py-16 bg-gray-50 relative">
@@ -63,7 +31,7 @@ const Events = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div
             className={`text-center mb-12 transition-all duration-1000 ${
-              isVisible.events
+              isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
@@ -82,7 +50,7 @@ const Events = () => {
               <Card
                 key={event.id}
                 className={`overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 ${
-                  isVisible.events
+                  isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
                 }`}
@@ -149,8 +117,6 @@ const Events = () => {
           </div>
         </div>
       </section>
-      <Messages isVisible={isVisible.messages} />
-      <Pastor isVisible={isVisible.pastor} />
     </>
   );
 };

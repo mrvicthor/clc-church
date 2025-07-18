@@ -3,9 +3,10 @@ import { Button } from "./ui/button";
 
 type PastorProps = {
   isVisible: boolean;
+  scrollY: number;
 };
 
-const Pastor = ({ isVisible }: PastorProps) => {
+const Pastor = ({ isVisible, scrollY }: PastorProps) => {
   return (
     <section
       id="pastor"
