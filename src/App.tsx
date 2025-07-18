@@ -4,6 +4,7 @@
 
 import Banner from "./components/banner";
 import Cursor from "./components/cursor";
+import Events from "./components/events";
 import Header from "./components/header";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Events />
       </main>
     </div>
   );
