@@ -12,7 +12,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3 animate-fade-in">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-amber-500 rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-              <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-8 h-8 rounded-full"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">

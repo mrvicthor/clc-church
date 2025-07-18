@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { FaFacebookF, FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-scroll";
 
@@ -16,7 +15,11 @@ const Footer = () => {
           <div className="animate-fade-in">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-amber-500 rounded-full flex items-center justify-center">
-                <Heart className="w-5 h-5 text-white" />
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="w-8 h-8 rounded-full"
+                />
               </div>
               <h3 className="text-lg font-bold">Grace Community Church</h3>
             </div>
@@ -49,7 +52,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Service Times</h4>
             <ul className="space-y-2 text-gray-400">
               <li>Sunday Worship: 10:00 AM</li>
-              <li>Wednesday Prayer: 6:30 PM</li>
+              <li>Wednesday Bible Study: 7:30 PM</li>
               <li>Youth Group: Wed 7:00 PM</li>
             </ul>
           </div>
@@ -73,7 +76,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Grace Community Church. All rights reserved.</p>
+          <p>&copy; 2025 Christ Liberty Church. All rights reserved.</p>
         </div>
       </div>
     </footer>
