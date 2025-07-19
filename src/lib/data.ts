@@ -4,20 +4,20 @@ export const events = [
   {
     id: 1,
     title: "Sunday Worship Service",
-    date: "2024-01-21",
+    date: "2025-07-20",
     time: "10:00 AM",
-    location: "Main Sanctuary",
+    location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
       "Join us for our weekly worship service with inspiring music and biblical teaching.",
-    image: "/sunday.jpg",
+    image: "/sunday-banner.jpg",
     category: "Worship",
   },
   {
     id: 2,
-    title: "Youth Bible Study",
-    date: "2024-01-24",
-    time: "7:00 PM",
-    location: "Youth Center",
+    title: "Bible Study",
+    date: "2025-07-23",
+    time: "7:30 PM",
+    location: "Online - YouTube Live",
     description:
       "A dynamic Bible study session designed for teenagers and young adults.",
     image: "/bible-study.jpg",
@@ -39,7 +39,7 @@ export const events = [
     title: "Prayer Meeting",
     date: "2024-01-31",
     time: "6:30 PM",
-    location: "Prayer Room",
+    location: "Online - Zoom",
     description:
       "Come together in prayer for our church, community, and world.",
     image: "/prayer.jpg",

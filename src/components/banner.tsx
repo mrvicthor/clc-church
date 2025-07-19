@@ -21,7 +21,7 @@ const Banner = () => {
   return (
     <section
       id="hero"
-      className="relative text-white mt-20 overflow-hidden border h-[calc(100vh-5rem)]"
+      className="relative text-white mt-20 overflow-hidden h-[calc(100vh-5rem)]"
     >
       {/* Carousel Container */}
       <div className="relative w-full h-full">

@@ -36,6 +36,7 @@ const Footer = () => {
                   <li key={item}>
                     <Link
                       to={item.toLowerCase()}
+                      offset={-50}
                       smooth={true}
                       duration={500}
                       className="hover:text-white transition-colors duration-300"

@@ -37,8 +37,9 @@ const Header = () => {
             {["Home", "Events", "Messages", "About", "Contact"].map(
               (item, index) => (
                 <Link
-                  to={item.toLowerCase()}
+                  to={item.toLowerCase() === "home" ? "/" : item.toLowerCase()}
                   spy={true}
+                  offset={-50}
                   smooth={true}
                   duration={500}
                   key={item}

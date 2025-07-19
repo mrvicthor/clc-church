@@ -49,7 +49,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       <Cursor />
       <Header />
       <main>
