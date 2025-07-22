@@ -45,11 +45,11 @@ const Events = ({ isVisible, scrollY }: EventsProps) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {events.map((event, index) => (
               <Card
                 key={event.id}
-                className={`overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 ${
+                className={`overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 p-0 h-full flex flex-col ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -60,7 +60,7 @@ const Events = ({ isVisible, scrollY }: EventsProps) => {
                   <img
                     src={event.image || "/placeholder.svg"}
                     alt={event.title}
-                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-gradient-to-r from-blue-600 to-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium animate-pulse">
@@ -68,13 +68,13 @@ const Events = ({ isVisible, scrollY }: EventsProps) => {
                     </span>
                   </div>
                 </div>
-                <CardHeader>
+                <CardHeader className="pb-4 flex-shrink-0">
                   <CardTitle className="text-xl">{event.title}</CardTitle>
                   <CardDescription className="text-gray-600">
                     {event.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-6 flex-grow flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
                       <Calendar className="w-4 h-4 mr-2" />

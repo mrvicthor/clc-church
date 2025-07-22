@@ -9,29 +9,29 @@ export const events = [
     location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
       "Join us for our weekly worship service with inspiring music and biblical teaching.",
-    image: "/sunday-banner.jpg",
+    image: "/SundayService-2.webp",
     category: "Worship",
   },
   {
     id: 2,
-    title: "Bible Study",
+    title: "Wednesday Bible Study",
     date: "2025-07-23",
     time: "7:30 PM",
     location: "Online - YouTube Live",
     description:
       "A dynamic Bible study session designed for teenagers and young adults.",
-    image: "/bible-study.jpg",
+    image: "/wednesday-fellowship.webp",
     category: "Youth",
   },
   {
     id: 3,
-    title: "Community Outreach",
+    title: "Relate Group",
     date: "2024-01-27",
     time: "9:00 AM",
-    location: "Downtown Community Center",
+    location: "Online - Zoom",
     description:
-      "Serving our community with food distribution and prayer support.",
-    image: "/slide4.jpg",
+      "Our weekly relate groups provide an opportunity for people to connect and build life-long friendships.",
+    image: "/RelateGroups.webp",
     category: "Outreach",
   },
   {
