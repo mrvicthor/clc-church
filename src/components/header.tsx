@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">
-                Christ Liberty Church
+                Christ's Liberty Church
               </h1>
               <p className="text-sm text-gray-600">Faith • Hope • Love</p>
             </div>

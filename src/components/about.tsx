@@ -32,7 +32,7 @@ const About = ({ isVisible, scrollY }: AboutProps) => {
               About Our Church
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              Christ Liberty Church has been serving our community for over 25
+              Christ's Liberty Church has been serving our community for over 25
               years. We are a diverse, welcoming congregation committed to
               following Jesus Christ and making a positive impact in our world.
             </p>

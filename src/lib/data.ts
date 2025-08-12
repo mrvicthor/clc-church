@@ -4,7 +4,7 @@ export const events = [
   {
     id: 1,
     title: "Sunday Worship Service",
-    date: "2025-08-03",
+    date: "2025-08-17",
     time: "10:00 AM",
     location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
@@ -15,7 +15,7 @@ export const events = [
   {
     id: 2,
     title: "Wednesday Bible Study",
-    date: "2025-08-06",
+    date: "2025-08-13",
     time: "7:30 PM",
     location: "Online - YouTube Live",
     description:
@@ -26,7 +26,7 @@ export const events = [
   {
     id: 3,
     title: "Relate Group",
-    date: "2025-08-09",
+    date: "2025-08-16",
     time: "9:00 AM",
     location: "Online - Zoom",
     description:
@@ -49,14 +49,13 @@ export const events = [
 
 export const recentMessages = [
   {
-    title: "Walking in Faith",
-    pastor: "Pastor John Smith",
+    title: "New Beginnings. Making room for the new",
+    pastor: "Pastor Nelson Ngoka",
     date: "January 14, 2024",
     duration: "35:42",
     series: "Faith Journey",
-    audioUrl: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Sample audio
-    videoUrl:
-      "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4", // Sample video
+    audioUrl: "/latest-sunday-message.mp3", // Sample audio
+    videoUrl: "https://www.youtube.com/watch?v=WmG2EkJH2ZM", // Sample video
   },
   {
     title: "Love Without Limits",
@@ -108,11 +107,12 @@ export const aboutItems = [
 ];
 
 export const contatctItems = [
-  { icon: Phone, title: "Phone", content: "(555) 123-4567" },
-  { icon: Mail, title: "Email", content: "info@gracechurch.com" },
+  { icon: Phone, title: "Phone", content: "+44(0)20 3983 9394" },
+  { icon: Mail, title: "Email", content: "admin@christslibertychurch.com" },
   {
     icon: MapPin,
     title: "Address",
-    content: "123 Faith Street\nHope City, HC 12345",
+    content:
+      "Harris Academy South Norwood, Cumberlow Avenue, South Norwood, London. SE25 6AE",
   },
 ];

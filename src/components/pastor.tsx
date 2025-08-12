@@ -74,11 +74,9 @@ const Pastor = ({ isVisible, scrollY }: PastorProps) => {
                 </div>
 
                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-lg">
-                    "Welcome to Christ Liberty Church! For over 25 years, we
-                    have been blessed to serve this wonderful community and
-                    witness God's amazing work in the lives of countless
-                    families."
+                  <p>
+                    "Dear Friend, Welcome once again to Christ’s Liberty Church,
+                    The Hope Centre.. where anything is possible!"
                   </p>
 
                   <p>

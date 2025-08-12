@@ -21,10 +21,10 @@ const Footer = () => {
                   className="w-8 h-8 rounded-full"
                 />
               </div>
-              <h3 className="text-lg font-bold">Grace Community Church</h3>
+              <h3 className="text-lg font-bold">Christ's Liberty Church</h3>
             </div>
             <p className="text-gray-400">
-              Building faith, hope, and love in our community since 1998.
+              The Hope Center. Where anything is possible with God.
             </p>
           </div>
 
@@ -77,7 +77,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Christ Liberty Church. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Christ's Liberty Church. All
+            rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -89,7 +89,7 @@ export const experiences = [
   {
     id: 2,
     title: "frontend developer",
-    company: "Christ Liberty Church",
+    company: "Christ's Liberty Church",
     period: "2022-23",
   },
   {
