@@ -52,10 +52,10 @@ export const recentMessages = [
     title: "New Beginnings. Making room for the new",
     pastor: "Pastor Nelson Ngoka",
     date: "January 14, 2024",
-    duration: "35:42",
+    duration: "66:33",
     series: "Faith Journey",
     audioUrl: "/latest-sunday-message.mp3", // Sample audio
-    videoUrl: "https://www.youtube.com/watch?v=WmG2EkJH2ZM", // Sample video
+    videoUrl: "/sunday-service-1.mp4", // Sample video
   },
   {
     title: "Love Without Limits",

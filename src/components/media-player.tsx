@@ -20,7 +20,6 @@ interface MediaPlayerProps {
   date: string;
   audioUrl?: string;
   videoUrl?: string;
-  type: "audio" | "video";
 }
 
 export function MediaPlayer({
@@ -29,7 +28,6 @@ export function MediaPlayer({
   date,
   audioUrl,
   videoUrl,
-  type,
 }: MediaPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -37,8 +35,9 @@ export function MediaPlayer({
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
   const mediaRef = useRef<HTMLAudioElement | HTMLVideoElement>(null);
+  const [playerType, setPlayerType] = useState<"audio" | "video">("audio");
 
-  const mediaUrl = type === "video" ? videoUrl : audioUrl;
+  const progressPercentage = duration ? (currentTime / duration) * 100 : 0;
 
   useEffect(() => {
     const media = mediaRef.current;
@@ -46,25 +45,35 @@ export function MediaPlayer({
 
     const updateTime = () => setCurrentTime(media.currentTime);
     const updateDuration = () => setDuration(media.duration);
+    const handleEnded = () => setIsPlaying(false);
 
     media.addEventListener("timeupdate", updateTime);
     media.addEventListener("loadedmetadata", updateDuration);
-    media.addEventListener("ended", () => setIsPlaying(false));
+    media.addEventListener("ended", handleEnded);
 
     return () => {
       media.removeEventListener("timeupdate", updateTime);
       media.removeEventListener("loadedmetadata", updateDuration);
-      media.removeEventListener("ended", () => setIsPlaying(false));
+      media.removeEventListener("ended", handleEnded);
     };
-  }, []);
+  }, [playerType]);
+
+  useEffect(() => {
+    setCurrentTime(0);
+    setDuration(0);
+    setIsPlaying(false);
+  }, [playerType]);
 
   const togglePlay = () => {
+    console.log("togglePlay");
     const media = mediaRef.current;
     if (!media) return;
-
+    console.log({ isPlaying, media });
     if (isPlaying) {
+      console.log("Pausing media");
       media.pause();
     } else {
+      console.log("Playing media");
       media.play();
     }
     setIsPlaying(!isPlaying);
@@ -118,106 +127,140 @@ export function MediaPlayer({
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const progressPercentage = duration ? (currentTime / duration) * 100 : 0;
+  const handlePlayerTypeChange = (type: "audio" | "video") => {
+    const media = mediaRef.current;
+    if (!media) return;
+
+    media.pause();
+    setPlayerType(type);
+  };
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-amber-500 rounded-lg p-6 text-white">
-      {/* Media Element */}
-      {type === "video" ? (
-        <video
-          ref={mediaRef as React.RefObject<HTMLVideoElement>}
-          src={mediaUrl}
-          className="w-full h-48 rounded-lg mb-4 bg-black"
-          controls={false}
-        />
-      ) : (
-        <audio
-          ref={mediaRef as React.RefObject<HTMLAudioElement>}
-          src={mediaUrl}
-        />
-      )}
-
-      {/* Media Info */}
-      <div className="mb-4">
-        <h3 className="text-xl font-bold mb-1">{title}</h3>
-        <p className="text-white/80 text-sm">
-          {pastor} • {date}
-        </p>
+    <>
+      <div className="mb-4 flex gap-2">
+        <Button
+          onClick={() => handlePlayerTypeChange("audio")}
+          variant={playerType === "audio" ? "default" : "outline"}
+          size="sm"
+          className={
+            playerType === "audio"
+              ? "bg-gradient-to-r from-blue-600 to-amber-500"
+              : ""
+          }
+        >
+          Audio
+        </Button>
+        <Button
+          onClick={() => handlePlayerTypeChange("video")}
+          variant={playerType === "video" ? "default" : "outline"}
+          size="sm"
+          className={
+            playerType === "video"
+              ? "bg-gradient-to-r from-blue-600 to-amber-500"
+              : ""
+          }
+        >
+          Video
+        </Button>
       </div>
+      <div className="bg-gradient-to-r from-blue-600 to-amber-500 rounded-lg p-6 text-white">
+        {/* Media Element */}
+        {playerType === "video" ? (
+          <video
+            ref={mediaRef as React.RefObject<HTMLVideoElement>}
+            src={videoUrl}
+            className="w-full h-48 rounded-lg mb-4 bg-black"
+            controls={false}
+          />
+        ) : (
+          <audio
+            ref={mediaRef as React.RefObject<HTMLAudioElement>}
+            src={audioUrl}
+          />
+        )}
 
-      {/* Progress Bar */}
-      <div className="mb-4">
-        <Slider
-          value={[progressPercentage]}
-          onValueChange={handleSeek}
-          max={100}
-          step={0.1}
-          className="w-full"
-        />
-        <div className="flex justify-between text-xs text-white/70 mt-1">
-          <span>{formatTime(currentTime)}</span>
-          <span>{formatTime(duration)}</span>
-        </div>
-      </div>
-
-      {/* Controls */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Button
-            onClick={() => skipTime(-10)}
-            size="sm"
-            variant="ghost"
-            className="text-white hover:bg-white/20"
-          >
-            <SkipBack className="w-4 h-4" />
-          </Button>
-
-          <Button
-            onClick={togglePlay}
-            size="lg"
-            className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full"
-          >
-            {isPlaying ? (
-              <Pause className="w-6 h-6" />
-            ) : (
-              <Play className="w-6 h-6 ml-1" />
-            )}
-          </Button>
-
-          <Button
-            onClick={() => skipTime(10)}
-            size="sm"
-            variant="ghost"
-            className="text-white hover:bg-white/20"
-          >
-            <SkipForward className="w-4 h-4" />
-          </Button>
+        {/* Media Info */}
+        <div className="mb-4">
+          <h3 className="text-xl font-bold mb-1">{title}</h3>
+          <p className="text-white/80 text-sm">
+            {pastor} • {date}
+          </p>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <Button
-            onClick={toggleMute}
-            size="sm"
-            variant="ghost"
-            className="text-white hover:bg-white/20"
-          >
-            {isMuted ? (
-              <VolumeX className="w-4 h-4" />
-            ) : (
-              <Volume2 className="w-4 h-4" />
-            )}
-          </Button>
-          <div className="w-20">
-            <Slider
-              value={[isMuted ? 0 : volume * 100]}
-              onValueChange={handleVolumeChange}
-              max={100}
-              step={1}
-              className="w-full"
-            />
+        {/* Progress Bar */}
+        <div className="mb-4">
+          <Slider
+            value={[progressPercentage]}
+            onValueChange={handleSeek}
+            max={100}
+            step={0.1}
+            className="w-full"
+          />
+          <div className="flex justify-between text-xs text-white/70 mt-1">
+            <span>{formatTime(currentTime)}</span>
+            <span>{formatTime(duration)}</span>
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Button
+              onClick={() => skipTime(-10)}
+              size="sm"
+              variant="ghost"
+              className="text-white hover:bg-white/20"
+            >
+              <SkipBack className="w-4 h-4" />
+            </Button>
+
+            <Button
+              onClick={togglePlay}
+              size="lg"
+              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full"
+            >
+              {isPlaying ? (
+                <Pause className="w-6 h-6" />
+              ) : (
+                <Play className="w-6 h-6 ml-1" />
+              )}
+            </Button>
+
+            <Button
+              onClick={() => skipTime(10)}
+              size="sm"
+              variant="ghost"
+              className="text-white hover:bg-white/20"
+            >
+              <SkipForward className="w-4 h-4" />
+            </Button>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Button
+              onClick={toggleMute}
+              size="sm"
+              variant="ghost"
+              className="text-white hover:bg-white/20"
+            >
+              {isMuted ? (
+                <VolumeX className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
+            </Button>
+            <div className="w-20">
+              <Slider
+                value={[isMuted ? 0 : volume * 100]}
+                onValueChange={handleVolumeChange}
+                max={100}
+                step={1}
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

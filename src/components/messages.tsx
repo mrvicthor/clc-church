@@ -12,7 +12,7 @@ type MessagesProps = {
 
 const Messages = ({ isVisible, scrollY }: MessagesProps) => {
   const [selectedMessage, setSelectedMessage] = useState(recentMessages[0]);
-  const [playerType, setPlayerType] = useState<"audio" | "video">("audio");
+
   return (
     <section id="messages" className="py-16 bg-white relative">
       {/* Parallax Background */}
@@ -49,7 +49,7 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="mb-4 flex gap-2">
+            {/* <div className="mb-4 flex gap-2">
               <Button
                 onClick={() => setPlayerType("audio")}
                 variant={playerType === "audio" ? "default" : "outline"}
@@ -74,7 +74,7 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
               >
                 Video
               </Button>
-            </div>
+            </div> */}
 
             <MediaPlayer
               title={selectedMessage.title}
@@ -82,7 +82,7 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
               date={selectedMessage.date}
               audioUrl={selectedMessage.audioUrl}
               videoUrl={selectedMessage.videoUrl}
-              type={playerType}
+              // type={playerType}
             />
           </div>
 
