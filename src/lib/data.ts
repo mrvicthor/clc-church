@@ -1,4 +1,5 @@
 import { BookOpen, Heart, Mail, MapPin, Phone, Users } from "lucide-react";
+import { FaFacebookF, FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
 
 export const events = [
   {
@@ -114,5 +115,23 @@ export const contatctItems = [
     title: "Address",
     content:
       "Harris Academy South Norwood, Cumberlow Avenue, South Norwood, London. SE25 6AE",
+  },
+];
+
+export const socials = [
+  {
+    id: 1,
+    icon: FaFacebookF,
+    url: "https://www.facebook.com/christslibertychurch",
+  },
+  {
+    id: 2,
+    icon: FaSquareInstagram,
+    url: "https://www.instagram.com/christsliberty/",
+  },
+  {
+    id: 3,
+    icon: FaXTwitter,
+    url: "https://x.com/christsliberty",
   },
 ];

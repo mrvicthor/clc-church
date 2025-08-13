@@ -1,4 +1,4 @@
-import { FaFacebookF, FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
+import { socials } from "@/lib/data";
 import { Link } from "react-scroll";
 
 const Footer = () => {
@@ -61,17 +61,16 @@ const Footer = () => {
           <div className="animate-fade-in animation-delay-600">
             <h4 className="font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              {[FaFacebookF, FaSquareInstagram, FaXTwitter].map(
-                (Icon, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="text-gray-400 hover:text-white transform hover:scale-125 transition-all duration-300"
-                  >
-                    <Icon className="w-6 h-6" />
-                  </a>
-                )
-              )}
+              {socials.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  className="text-gray-400 hover:text-white transform hover:scale-125 transition-all duration-300"
+                >
+                  <item.icon className="w-6 h-6" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

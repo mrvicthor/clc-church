@@ -1,6 +1,5 @@
 import { recentMessages } from "@/lib/data";
 import { useState } from "react";
-import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Play } from "lucide-react";
 import { MediaPlayer } from "./media-player";
@@ -15,7 +14,6 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
 
   return (
     <section id="messages" className="py-16 bg-white relative">
-      {/* Parallax Background */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -41,7 +39,6 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Media Player */}
           <div
             className={`transition-all duration-1000 ${
               isVisible
@@ -49,44 +46,15 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            {/* <div className="mb-4 flex gap-2">
-              <Button
-                onClick={() => setPlayerType("audio")}
-                variant={playerType === "audio" ? "default" : "outline"}
-                size="sm"
-                className={
-                  playerType === "audio"
-                    ? "bg-gradient-to-r from-blue-600 to-amber-500"
-                    : ""
-                }
-              >
-                Audio
-              </Button>
-              <Button
-                onClick={() => setPlayerType("video")}
-                variant={playerType === "video" ? "default" : "outline"}
-                size="sm"
-                className={
-                  playerType === "video"
-                    ? "bg-gradient-to-r from-blue-600 to-amber-500"
-                    : ""
-                }
-              >
-                Video
-              </Button>
-            </div> */}
-
             <MediaPlayer
               title={selectedMessage.title}
               pastor={selectedMessage.pastor}
               date={selectedMessage.date}
               audioUrl={selectedMessage.audioUrl}
               videoUrl={selectedMessage.videoUrl}
-              // type={playerType}
             />
           </div>
 
-          {/* Recent Messages List */}
           <div
             className={`space-y-4 transition-all duration-1000 ${
               isVisible
@@ -132,12 +100,13 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+          <a
+            href="https://www.youtube.com/@ChristsLibertyChurch"
+            target="_blank"
+            className="bg-gradient-to-r py-3 px-4 rounded-md from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
           >
             View All Messages
-          </Button>
+          </a>
         </div>
       </div>
     </section>
