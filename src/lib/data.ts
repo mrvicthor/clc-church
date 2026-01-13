@@ -59,7 +59,7 @@ export const recentMessages = [
     title: "Vectors of The Gospel Part 3",
     pastor: "Pastor Nelson Ngoka",
     date: "January 18, 2026",
-    duration: "42:15",
+    duration: "89:44",
     series: "God's Love",
     audioUrl: sundayAudio,
   },
