@@ -1,5 +1,7 @@
 import { BookOpen, Heart, Mail, MapPin, Phone, Users } from "lucide-react";
+
 import { FaFacebookF, FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
+import sundayAudio from "@/assets/sunday-11th.mp3";
 
 export const events = [
   {
@@ -54,6 +56,14 @@ export const events = [
 
 export const recentMessages = [
   {
+    title: "Vectors of The Gospel Part 3",
+    pastor: "Pastor Nelson Ngoka",
+    date: "January 18, 2026",
+    duration: "42:15",
+    series: "God's Love",
+    audioUrl: sundayAudio,
+  },
+  {
     title: "New Beginnings. Making room for the new",
     pastor: "Pastor Nelson Ngoka",
     date: "January 14, 2024",
@@ -62,14 +72,7 @@ export const recentMessages = [
     audioUrl: "/latest-sunday-message.mp3", // Sample audio
     videoUrl: "/sunday-service-1.mp4", // Sample video
   },
-  {
-    title: "Love Without Limits",
-    pastor: "Pastor Sarah Johnson",
-    date: "January 7, 2024",
-    duration: "42:15",
-    series: "God's Love",
-    audioUrl: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
-  },
+
   {
     title: "Hope in Difficult Times",
     pastor: "Pastor John Smith",
