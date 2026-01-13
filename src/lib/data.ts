@@ -5,35 +5,38 @@ export const events = [
   {
     id: 1,
     title: "Sunday Worship Service",
-    date: "2025-08-17",
+    date: "2026-01-18",
     time: "10:00 AM",
     location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
       "Join us for our weekly worship service with inspiring music and biblical teaching.",
     image: "/SundayService-2.webp",
     category: "Worship",
+    link: "https://www.youtube.com/live/qKS83LrHThA?si=fR30CxMQqUXrbgGQ",
   },
   {
     id: 2,
     title: "Wednesday Bible Study",
-    date: "2025-08-13",
+    date: "2026-01-14",
     time: "7:30 PM",
     location: "Online - YouTube Live",
     description:
       "A dynamic Bible study session designed for teenagers and young adults.",
     image: "/wednesday-fellowship.webp",
     category: "Youth",
+    link: "https://www.youtube.com/live/XvFxnyUms58?si=18g-eeBxYLmUHeKM",
   },
   {
     id: 3,
     title: "Relate Group",
-    date: "2025-08-16",
-    time: "9:00 AM",
+    date: "2026-01-17",
+    time: "8:00 AM",
     location: "Online - Zoom",
     description:
       "Our weekly relate groups provide an opportunity for people to connect and build life-long friendships.",
     image: "/RelateGroups.webp",
     category: "Outreach",
+    link: "",
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const events = [
       "Come together in prayer for our church, community, and world.",
     image: "/prayer.jpg",
     category: "Prayer",
+    link: "",
   },
 ];
 

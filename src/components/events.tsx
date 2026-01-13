@@ -97,10 +97,16 @@ const Events = ({ isVisible, scrollY }: EventsProps) => {
                     </div>
                   </div>
                   <Button
+                    asChild
                     className="w-full mt-4 bg-transparent hover:from-blue-700 hover:to-amber-600 hover:bg-gradient-to-r hover:text-white transition-all duration-300 transform hover:scale-105"
                     variant="outline"
                   >
-                    Learn More
+                    <a
+                      href={event.link}
+                      target={event.link === "" ? "_parent" : "_blank"}
+                    >
+                      Learn More
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

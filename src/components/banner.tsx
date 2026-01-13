@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 import { gsap } from "gsap";
 
 const Banner = () => {
@@ -63,14 +64,30 @@ const Banner = () => {
                   size="lg"
                   className="bg-white text-amber-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
                 >
-                  Join Us This Sunday
+                  <Link
+                    to="events"
+                    offset={-50}
+                    smooth={true}
+                    duration={500}
+                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 hover:scale-105 transform cursor-pointer"
+                  >
+                    Join Us This Sunday
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-amber-600 bg-transparent transform hover:scale-105 transition-all duration-300"
                 >
-                  Learn More About Us
+                  <Link
+                    to="about"
+                    offset={-50}
+                    smooth={true}
+                    duration={500}
+                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 hover:scale-105 transform cursor-pointer"
+                  >
+                    Learn More About Us
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -107,14 +124,21 @@ const Banner = () => {
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
                 >
-                  Plan Your Visit
+                  <Link to="contact" smooth={true} duration={500}>
+                    Plan Your Visit
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent transform hover:scale-105 transition-all duration-300"
                 >
-                  Watch Online
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/live/qKS83LrHThA?si=fR30CxMQqUXrbgGQ"
+                  >
+                    Watch Online
+                  </a>
                 </Button>
               </div>
             </div>
@@ -151,14 +175,18 @@ const Banner = () => {
                   size="lg"
                   className="bg-white text-purple-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
                 >
-                  Get Involved
+                  <Link to="section1" smooth={true} duration={500}>
+                    Get Involved
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-purple-600 bg-transparent transform hover:scale-105 transition-all duration-300"
                 >
-                  Volunteer Today
+                  <Link to="section1" smooth={true} duration={500}>
+                    Volunteer Today
+                  </Link>
                 </Button>
               </div>
             </div>
