@@ -35,7 +35,7 @@ const Banner = () => {
           <div className="w-full flex-shrink-0 relative">
             {/* Parallax Background Elements */}
 
-            <div className="mx-auto px-4 text-center relative flex flex-col justify-center z-10 h-full py-16 bg-[url('/banner.webp')] bg-cover bg-center">
+            <div className="mx-auto px-4 text-center relative flex flex-col justify-center z-10 h-full py-16 bg-[url('/banner-2026.jpeg')] bg-cover bg-top bg-no-repeat">
               <h2
                 onMouseEnter={() =>
                   gsap.to("#cursor", { scale: 8, duration: 0.3 })
@@ -43,7 +43,7 @@ const Banner = () => {
                 onMouseLeave={() =>
                   gsap.to("#cursor", { scale: 1, duration: 0.3 })
                 }
-                className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up"
+                className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up text-shadow-accent"
               >
                 Welcome to Our Church Family
               </h2>
@@ -54,7 +54,7 @@ const Banner = () => {
                 onMouseLeave={() =>
                   gsap.to("#cursor", { scale: 1, duration: 0.3 })
                 }
-                className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300"
+                className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300 text-shadow-accent"
               >
                 Join us as we grow in faith, serve our community, and worship
                 together in love and unity.
@@ -216,11 +216,10 @@ const Banner = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index
-                  ? "bg-white scale-125"
-                  : "bg-white/50 hover:bg-white/75"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/75"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
