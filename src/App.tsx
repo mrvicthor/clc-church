@@ -24,6 +24,7 @@ function App() {
     contact: false,
   });
 
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -40,14 +41,17 @@ function App() {
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.25, rootMargin: "0px 0px -100px 0px",
+      }
     );
 
     const sections = document.querySelectorAll("section[id]");
     sections.forEach((section) => observer.observe(section));
-
     return () => observer.disconnect();
   }, []);
+
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Cursor />
