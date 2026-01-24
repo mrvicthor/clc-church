@@ -114,7 +114,7 @@ const Messages = ({ isVisible, scrollY }: MessagesProps) => {
                           <span>•</span>
                           <span>{video.duration}</span>
                           <span>•</span> */}
-                            <span className="text-amber-600">{video.publishedAt}</span>
+                            <span className="text-amber-600">{new Date(video.publishedAt).toLocaleDateString()}</span>
                           </div>
                         </div>
                         <button className="w-10 h-10 bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
