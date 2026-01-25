@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import { gsap } from "gsap";
 
 const Banner = () => {
@@ -59,7 +59,7 @@ const Banner = () => {
                 Join us as we grow in faith, serve our community, and worship
                 together in love and unity.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
                 <Button
                   size="lg"
                   className="bg-white text-amber-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
@@ -89,7 +89,7 @@ const Banner = () => {
                     Learn More About Us
                   </Link>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -119,7 +119,7 @@ const Banner = () => {
                 Discover a place where faith comes alive and community
                 flourishes in Christ's love.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
@@ -140,7 +140,7 @@ const Banner = () => {
                     Watch Online
                   </a>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -170,7 +170,7 @@ const Banner = () => {
                 Together, we make a difference through acts of service and
                 compassion in our neighborhood.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-white text-purple-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
@@ -188,7 +188,7 @@ const Banner = () => {
                     Volunteer Today
                   </Link>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
