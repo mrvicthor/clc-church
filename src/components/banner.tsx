@@ -36,60 +36,7 @@ const Banner = () => {
             {/* Parallax Background Elements */}
 
             <div className="mx-auto px-4 text-center relative flex flex-col justify-center z-10 h-full py-16 bg-[url('/banner-2026.jpeg')] bg-cover bg-top bg-no-repeat">
-              <h2
-                onMouseEnter={() =>
-                  gsap.to("#cursor", { scale: 8, duration: 0.3 })
-                }
-                onMouseLeave={() =>
-                  gsap.to("#cursor", { scale: 1, duration: 0.3 })
-                }
-                className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up text-shadow-accent"
-              >
-                Welcome to Our Church Family
-              </h2>
-              <p
-                onMouseEnter={() =>
-                  gsap.to("#cursor", { scale: 8, duration: 0.3 })
-                }
-                onMouseLeave={() =>
-                  gsap.to("#cursor", { scale: 1, duration: 0.3 })
-                }
-                className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300 text-shadow-accent"
-              >
-                Join us as we grow in faith, serve our community, and worship
-                together in love and unity.
-              </p>
-              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
-                <Button
-                  size="lg"
-                  className="bg-white text-amber-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
-                >
-                  <Link
-                    to="events"
-                    offset={-50}
-                    smooth={true}
-                    duration={500}
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 hover:scale-105 transform cursor-pointer"
-                  >
-                    Join Us This Sunday
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-amber-600 bg-transparent transform hover:scale-105 transition-all duration-300"
-                >
-                  <Link
-                    to="about"
-                    offset={-50}
-                    smooth={true}
-                    duration={500}
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 hover:scale-105 transform cursor-pointer"
-                  >
-                    Learn More About Us
-                  </Link>
-                </Button>
-              </div> */}
+
             </div>
           </div>
 
