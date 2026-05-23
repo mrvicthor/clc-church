@@ -19,7 +19,7 @@ export const events = [
   {
     id: 2,
     title: "Wednesday Bible Study",
-    date: "2026-05-20",
+    date: "2026-05-27",
     time: "7:30 PM",
     location: "Online - YouTube Live",
     description:
@@ -31,7 +31,7 @@ export const events = [
   {
     id: 3,
     title: "Relate Group",
-    date: "2026-05-22",
+    date: "2026-05-29",
     time: "8:00 AM",
     location: "Online - Zoom",
     description:
@@ -43,7 +43,7 @@ export const events = [
   {
     id: 4,
     title: "Prayer Meeting",
-    date: "2026-05-23",
+    date: "2026-05-30",
     time: "9:00 PM",
     location: "Online - Zoom",
     description:
