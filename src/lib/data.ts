@@ -7,7 +7,7 @@ export const events = [
   {
     id: 1,
     title: "Sunday Worship Service",
-    date: "2026-05-24",
+    date: "2026-05-31",
     time: "10:00 AM",
     location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
