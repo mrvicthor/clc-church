@@ -7,7 +7,7 @@ export const events = [
   {
     id: 1,
     title: "Sunday Worship Service",
-    date: "2026-06-07",
+    date: "2026-06-14",
     time: "10:00 AM",
     location: "Haris Academy, South Norwood Cumber Avenue. SE25 6AE",
     description:
@@ -19,7 +19,7 @@ export const events = [
   {
     id: 2,
     title: "Wednesday Bible Study",
-    date: "2026-06-10",
+    date: "2026-06-17",
     time: "7:30 PM",
     location: "Online - YouTube Live",
     description:
@@ -43,7 +43,7 @@ export const events = [
   {
     id: 4,
     title: "Prayer Meeting",
-    date: "2026-06-07",
+    date: "2026-06-13",
     time: "9:00 PM",
     location: "Online - Zoom",
     description:
